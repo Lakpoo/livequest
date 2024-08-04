@@ -12,6 +12,20 @@
         {% endblock %}
     </head>
     <body>
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="">Accueil</a></li>
+                    <li><a href="">Les Questions</a></li>
+                    <li><a href="">Les Auteurs</a></li>
+                    <li><a href="">Nouvelles Questions</a></li>
+                </ul>
+                <ul>
+                    <li><img src="" alt=""></li>
+                    <li><a href="{{ path('app_login') }}">Connexion</a></li>
+                </ul>
+            </nav>
+        </header>
         {% block body %}{% endblock %}
     </body>
 </html>
