@@ -13,19 +13,28 @@
     </head>
     <body>
         <header>
-            <nav>
-                <ul>
-                    <li><a href="">Accueil</a></li>
-                    <li><a href="">Les Questions</a></li>
-                    <li><a href="">Les Auteurs</a></li>
-                    <li><a href="">Nouvelles Questions</a></li>
+            <nav class="navbar">
+                <ul class="nav-left">
+                    <h3>Livequestion</h3>
+                    <li><a href="#">Accueil</a></li>
+                    <li><a href="#">Les Questions</a></li>
+                    <li><a href="#">Les Auteurs</a></li>
+                    <li><a href="#">Nouvelle Question</a></li>
                 </ul>
-                <ul>
-                    <li><img src="" alt=""></li>
-                    <li><a href="{{ path('app_login') }}">Connexion</a></li>
+                <ul class="nav-right">
+                    <li class="profile">
+                        {% if app.user %}
+                            <img src="" alt="{{ app.user.username }}" class="profile-img">
+                            <span>{{ app.user.username }}</span>
+                        {% else %}
+                            <a href="{{ path('login') }}" class="login-link">
+                                <span>Connexion</span>
+                            </a>
+                        {% endif %}
+                    </li>
                 </ul>
             </nav>
         </header>
-        {% block body %}{% endblock %}
+    {% block body %}{% endblock %}
     </body>
 </html>

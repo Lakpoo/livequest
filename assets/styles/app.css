@@ -1,3 +1,137 @@
-body {
-    background-color: skyblue;
+/*reset body*/
+
+body{
+    margin: 0;
+}
+
+/* bar de navigation */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #b50061;
+    padding: 10px 70px;
+    color: white;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+.navbar h3{
+    font-size: 2rem;
+    margin-right: 4rem;
+}
+
+.navbar ul.nav-left li {
+    margin-right: 20px;
+}
+
+.navbar ul.nav-left li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.navbar ul.nav-left li a:hover {
+    text-decoration: underline;
+}
+
+.navbar ul.nav-right {
+    display: flex;
+    align-items: center;
+}
+
+.navbar ul.nav-right .profile {
+    display: flex;
+    align-items: center;
+}
+
+.navbar ul.nav-right .profile-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.navbar ul.nav-right span {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: white;
+}
+
+/* login et register */
+
+.login, .register-title {
+    text-align: center;
+    font-size: 2rem;
+    color: #b50061;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.login-form, .register-form {
+    max-width: 350px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-label {
+    display: block;
+    font-weight: bold;
+    color: #b50061;
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+}
+
+.form-input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #333;
+    background-color: #fafafa;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-input:focus {
+    border-color: #b50061;
+    outline: none;
+    box-shadow: 0 0 8px rgba(181, 0, 97, 0.3);
+}
+
+.form-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #b50061;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.form-button:hover {
+    background-color: #93004d;
+}
+
+.form-button:active {
+    background-color: #7a003d;
+    transform: scale(0.98);
 }
