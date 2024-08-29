@@ -16,17 +16,24 @@
             <nav class="navbar">
                 <ul class="nav-left">
                     <h3>Livequestion</h3>
-                    <li><a href="#">Accueil</a></li>
-                    <li><a href="#">Les Questions</a></li>
-                    <li><a href="#">Les Auteurs</a></li>
-                    <li><a href="#">Nouvelle Question</a></li>
+                    <li><a href="{{ path('home') }}">Accueil</a></li>
+                    <li><a href="{{ path('question') }}">Les Questions</a></li>
+                    <li><a href="{{ path('auteur') }}">Les Auteurs</a></li>
+                    <a href="{{ path('new_question') }}">Nouvelle Question</a>
+                    <li><a href="{{ path('new_question') }}">Nouvelle Question</a></li>
                 </ul>
                 <ul class="nav-right">
                     <li class="profile">
                         {% if app.user %}
-                            <img src="" alt="{{ app.user.username }}" class="profile-img">
-                            <span>{{ app.user.username }}</span>
+                            {% set firstLetter = app.user.username|slice(0, 1)|upper %}
+                            <div class="profile-img">
+                                <span>{{ firstLetter }}</span>
+                            </div>
+                            <a href="{{ path('profile') }}">{{ app.user.username }}</a>
                         {% else %}
+                            <a href="{{ path('register') }}" class="login-link">
+                                <span>Inscription</span>
+                            </a>
                             <a href="{{ path('login') }}" class="login-link">
                                 <span>Connexion</span>
                             </a>
