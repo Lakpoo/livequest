@@ -1,20 +1,34 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello QuestionController!{% endblock %}
+{% block title %}Liste des Questions{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code>C:/Users/dlwsn/Desktop/projet/livequest/src/Controller/QuestionController.php</code></li>
-        <li>Your template at <code>C:/Users/dlwsn/Desktop/projet/livequest/templates/question/index.html.twig</code></li>
-    </ul>
-</div>
+    <div class="questions-container">
+        {% if questions is empty %}
+            <p>Aucune question n'a été trouvée.</p>
+        {% else %}
+            {% for question in questions %}
+                <div class="question-item">
+                    <div class="question-image">
+                        {% if question.photoFilename %}
+                            <img src="{{ asset('uploads/photos/' ~ question.photoFilename) }}" alt="Image de {{ question.title }}">
+                        {% else %}
+                            <img src="{{ asset('uploads/photos/default.png') }}" alt="Image par défaut">
+                        {% endif %}
+                    </div>
+                    <div class="question-content">
+                        <div class="question-category-time">
+                            <span class="category">{{ question.category }}</span>
+                            <span class="time">• Créé le {{ question.lifespan|date('d/m/Y H:i') }}</span>
+                        </div>
+                        <h2 class="question-title">{{ question.title }}</h2>
+                        <div class="question-details">
+                            <span class="responses-count">{{ question.responses|length }} réponses</span>
+                            <span class="author">- Par {{ question.author }}</span>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
 {% endblock %}

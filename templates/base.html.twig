@@ -19,8 +19,7 @@
                     <li><a href="{{ path('home') }}">Accueil</a></li>
                     <li><a href="{{ path('question') }}">Les Questions</a></li>
                     <li><a href="{{ path('auteur') }}">Les Auteurs</a></li>
-                    <a href="{{ path('new_question') }}">Nouvelle Question</a>
-                    <li><a href="{{ path('new_question') }}">Nouvelle Question</a></li>
+                    <li><a href="{{ is_granted('IS_AUTHENTICATED_FULLY') ? path('new_question') : path('login') }}">Nouvelle Question</a></li>
                 </ul>
                 <ul class="nav-right">
                     <li class="profile">

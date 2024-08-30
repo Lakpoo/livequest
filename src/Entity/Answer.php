@@ -28,6 +28,18 @@ class Answer
         return $this->id;
     }
 
+    public function getQuestion(): ?int
+    {
+        return $this->question;
+    }
+
+    public function setQuestion(?int $question): self
+    {
+        $this->question = $question;
+
+        return $this;
+    }
+
     public function getAuteur(): ?string
     {
         return $this->auteur;
