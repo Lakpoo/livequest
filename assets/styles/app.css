@@ -207,3 +207,99 @@ body{
 .author {
     margin-left: 10px;
 }
+
+/* deconnexion */
+
+.profile-update {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.profile-title {
+    text-align: center;
+    font-size: 2rem;
+    color: #b50061;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.profile-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-label {
+    display: block;
+    font-weight: bold;
+    color: #b50061;
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+}
+
+.form-input {
+    width: 90%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #333;
+    background-color: #fafafa;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-input:focus {
+    border-color: #b50061;
+    outline: none;
+    box-shadow: 0 0 8px rgba(181, 0, 97, 0.3);
+}
+
+.form-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #b50061;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.form-button:hover {
+    background-color: #93004d;
+}
+
+.form-button:active {
+    background-color: #7a003d;
+    transform: scale(0.98);
+}
+
+.logout-form {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.logout-button {
+    background-color: #ff4444;
+    margin-top: 10px;
+}
+
+.logout-button:hover {
+    background-color: #cc0000;
+}
+
+.logout-button:active {
+    background-color: #990000;
+    transform: scale(0.98);
+}
